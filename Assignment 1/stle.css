@@ -1,0 +1,13 @@
+body{
+    color: aqua;
+}
+#progress-content-section {
+	width:97%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 90px;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
