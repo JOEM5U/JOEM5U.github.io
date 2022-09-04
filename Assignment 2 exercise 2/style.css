@@ -1,0 +1,198 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: color ease-in 1s;
+}
+
+
+/*For the Dark/Light Button*/
+button{
+float: left;
+padding: 8px;
+border-radius: 20px;
+margin: 7px;
+animation: FadeIn 3.5s
+}
+
+button:hover{
+  cursor: pointer;
+}
+/*For this button I alligned it with the nav buttons asit would make the layout look cleaner but laso make it mroe visible.
+I left the button as the orifina color as this halps make it mroe identifyable to the users but does not take too much focus away.*/
+
+
+
+/* This is for the navigation bar modification */
+
+nav{
+  animation: FadeIn 4.5s
+}
+/*Originally I had the animation at 1.5s however I felt that it was too fast so I changed it to 4.5 
+This timing would help the user first identifiy the title and the dark mode button before exploring the page*/
+nav ol{
+  overflow: hidden; 
+  /* For this I read online that this would prevent scrollbars from appearinf if the element gets too large.
+  So I deicided to add it just in case. But I think adding a max width would also work*/ 
+  display: flex;
+}
+
+nav li{
+display: inline-block;
+background-color: var(--col-04);
+border-radius: 20px;
+margin: 5px; /*For spacing between the nav buttons*/
+}
+
+nav a{
+  display: block;
+  margin: 5px;
+  color: #813e3e;
+  /*I decided to use this color as it would be visible in both the light and dark mode.
+  Furthermore it has a nice subtle constrast which would draw the users attention after viewing the title*/
+}
+/*The orginal hyeprlink colour was constrasting too much so I changed the overall colour to mak eit more subtler but have less strain on the eyes.*/
+a{
+  color: #813e3e;
+}
+
+/*The animation for change color hover for the nav bar*/
+nav li:hover {
+  background-color: var(--col-02);
+  transition: 1s; /*For this I decided to add the trasition effect to make a slightly slower transition which would 
+  give the effect that something happens when the user would hover over the button. */
+  transform: scale(1.15);
+  /*This is just to add to further effect of the nav bar buttons for interactions*/
+  cursor: pointer;
+}
+
+
+
+nav a{
+  animation: colourCycle 2s ;
+}
+
+
+/*This is for the animation keyframes for the fade in for the nav buttons.
+The reason why I decided to have this fade in is to help establish a heirarchy.
+The user would first load the page then look at the title, then the nav buttons would fade in to pique the users' attention.
+This would then envcourage them to interact with the buttons and explore the page further*/
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  
+  to{
+    opacity: 1;
+  }
+}
+
+
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion) /*Accesibility tag*/ {
+  a:hover{
+    animation
+  }
+}
