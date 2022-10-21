@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    
+    <script src="javasc.js"></script>
+
+    <title>FinalWeb</title>
+
+  </head>
+
+  <body>
+    <!--I decided to use a grid layout for the website as I thought it would be easier to organise everything and place things on the page since the layout of the oven is very linear.-->
+    <div id="grid-container-bg">
+      
+      <!--This is for the heat. Rather than using icon-image (when reflecting back upon making this and the time contraints I had with this 
+        assignments and other assignments it would have been easier) I used the google symbol font and appplied it to buttons, similar to 
+        the media player icons.-->
+      <div id="temperature">
+        <button class="material-icons" id="button1" onclick="main1()">local_fire_department</button>
+        <button class="material-icons" id="button3" onclick="main2()" align="center">local_fire_departmentlocal_fire_department</button>
+        <button class="material-icons" id="button5" onclick="main3()">local_fire_departmentlocal_fire_departmentlocal_fire_department</button>
+      </div>
+      <!--I seperated the two set of buttons as it was eaier to put them into the layout compared to if I had put them together-->
+      <div id="time">
+        <!--Here I initial disable the buttons when the page first loads in order to direct the viewr in to first cliking the first set of buttons. 
+        After clikcing them it fires th function which enables the correspoding buttons which are the ones bellow. I felt like this approach would make the process/interactiuon
+      more easier to understand and follow through-->
+        <button class="material-icons" id="button2" onclick="set2main1()" disabled>timer</button>
+        <button class="material-icons" id="button4" onclick="set2main2()" disabled>timertimer</button>
+        <button class="material-icons" id="button6" onclick="set2main3()"disabled>timertimertimer</button>
+  
+      </div>
+
+     
+      <!--This is for the stove appearance.
+      For the appearance I decided to make it simple as it would help[ make it more recognissable to the viewer and after immediatly seeing it would think that this website is like an oven.-->
+      <div class="stove" id="box-one"></div>
+      <div class="stove" id="box-two"></div>
+      <div class="one" id="box-three"></div>
+      <div class="bread" id="box-four"></div>
+      <div class="stove" id="box-six">  </div>
+      <div class="stove" id="box-seven"></div>
+      <!--For the oven door-->
+      <div class="door" id="box-eight" style="display:none"></div>
+      </div>
+
+  </body>
+
+</html>
